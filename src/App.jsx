@@ -1,12 +1,36 @@
 import './App.css';
 
 function App() {
+  const setDarkTheme = () => {
+    document.querySelector('body').setAttribute('data-theme', 'dark');
+  };
+
+  const setLightTheme = () => {
+    document.querySelector('body').setAttribute('data-theme', 'light');
+  };
+
+  const toggleTheme = (e) => {
+    if (e.target.checked) {
+      setDarkTheme();
+    } else {
+      setLightTheme();
+    }
+  };
 
   return (
     <main className='flex h-screen w-full text-slate-700'>
       <div className='flex flex-col mx-auto p-20 bg-slate-400'>
         <div className='flex mx-auto pb-20'>
           <h1 className='font-extrabold text-3xl px-4'>Famous Quotes</h1>
+          <div className='dark_theme'>
+            <input
+              className='dark_theme_input'
+              type='checkbox'
+              id='theme-toggle'
+              onChange={toggleTheme}
+            />
+            <label className='dark_theme_label' htmlFor='theme-toggle'></label>
+          </div>
         </div>
 
         <div className='grid grid-cols-3 gap-4 md:gap-10 mx-auto'>

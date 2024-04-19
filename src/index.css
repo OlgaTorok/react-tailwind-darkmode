@@ -1,4 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --bg_col: #e2e8f0;
+    --title_col: #1e293b;
+  }
+
+  [data-theme='dark'] {
+    --bg_col: #1e293b;
+    --title_col: #e2e8f0;
+  }
+
+  body {
+    @apply font-sans font-light;
+    background-color: var(--bg_col);
+    color: var(--title_col);
+  }
+}
+
+@layer components {
+  .quote {
+    @apply font-cursive text-xl text-lightSlate bg-slate rounded-md;
+  }
+}
+
+/* Dark Mode */
+.dark_theme {
+  margin-top: -20px;
+  margin-left: 10px;
+}
+
+.dark_theme_label {
+  width: 65px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background: #cbd5e1;
+  border-radius: 200px;
+  box-shadow: rgba(50, 50, 93, 0.1)0px 5px 15px inset, rgba(0, 0, 0, 0.1) 0px -5px 15px inset;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark_theme_label:after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: linear-gradient(180deg, #cbd5e1, #475569);
+  border-radius: 180px;
+  transition: 0.3s;
+}
+
+.dark_theme_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.dark_theme_input:checked + .dark_theme_label:after {
+  left: 62px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #64748b, #0f172a);
+}
