@@ -20,6 +20,10 @@
     background-color: var(--bg_col);
     color: var(--title_col);
   }
+
+  h1 {
+    @apply font-bold text-xl text-center;
+  }
 }
 
 @layer components {
@@ -41,7 +45,9 @@
   display: block;
   background: #cbd5e1;
   border-radius: 200px;
-  box-shadow: rgba(50, 50, 93, 0.1)0px 5px 15px inset, rgba(0, 0, 0, 0.1) 0px -5px 15px inset;
+  box-shadow:
+    rgba(50, 50, 93, 0.1) 0px 5px 15px inset,
+    rgba(0, 0, 0, 0.1) 0px -5px 15px inset;
   cursor: pointer;
   transition: 0.3s;
 }

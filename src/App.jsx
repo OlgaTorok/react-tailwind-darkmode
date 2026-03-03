@@ -1,25 +1,25 @@
-import './App.css';
+import './App.css'
 
 function App() {
   const setDarkTheme = () => {
-    document.querySelector('body').setAttribute('data-theme', 'dark');
-  };
+    document.querySelector('body').setAttribute('data-theme', 'dark')
+  }
 
   const setLightTheme = () => {
-    document.querySelector('body').setAttribute('data-theme', 'light');
-  };
+    document.querySelector('body').setAttribute('data-theme', 'light')
+  }
 
   const toggleTheme = (e) => {
     if (e.target.checked) {
-      setDarkTheme();
+      setDarkTheme()
     } else {
-      setLightTheme();
+      setLightTheme()
     }
-  };
+  }
 
   return (
-    <main className='flex h-screen w-full text-slate-700'>
-      <div className='flex flex-col mx-auto p-20 bg-slate-400'>
+    <main className='flex min-h-screen w-full text-slate-700 p-20'>
+      <div className='flex flex-col mx-auto bg-slate-400'>
         <div className='flex mx-auto pb-20'>
           <h1 className='font-extrabold text-3xl px-4'>Famous Quotes</h1>
           <div className='dark_theme'>
@@ -33,9 +33,9 @@ function App() {
           </div>
         </div>
 
-        <div className='grid grid-cols-3 gap-4 md:gap-10 mx-auto'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 mx-auto'>
           <div className='flex flex-col gap-6'>
-            <h1 className='font-bold text-xl text-center'>Famous People</h1>
+            <h1 className='mt-4'>Famous People</h1>
             <span className='quote p-4 text-center'>
               The greatest glory in living lies not in never falling, but in
               rising every time we fall.
@@ -58,9 +58,7 @@ function App() {
           </div>
 
           <div className='flex flex-col gap-6'>
-            <h1 className='font-bold text-xl text-center'>
-              Best Quotes of All Time
-            </h1>
+            <h1 className='mt-4'>Best Quotes of All Time</h1>
             <span className='quote p-4 text-center'>
               Be yourself; everyone else is already taken.
               <br />
@@ -80,7 +78,7 @@ function App() {
           </div>
 
           <div className='flex flex-col gap-6'>
-            <h1 className='font-bold text-xl text-center'>Success Quotes</h1>
+            <h1 className='mt-4'>Success Quotes</h1>
             <span className='quote p-4 text-center'>
               Success usually comes to those who are too busy to be looking for
               it.
@@ -102,7 +100,7 @@ function App() {
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
